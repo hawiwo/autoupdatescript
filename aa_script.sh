@@ -16,6 +16,7 @@ self_update() {
         git checkout ${BRANCH}
         git pull --force
         echo "Running the new version..."
+        sleep 5
         exec "${SCRIPTNAME}" "$@"
 
         # Now exit this old instance
