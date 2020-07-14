@@ -26,8 +26,8 @@ self_update() {
 }
 
 main() {
-   echo "Running with $1"   
+   echo "Running with ${@}"   
 }
 
 self_update
-main
+main ${@}
