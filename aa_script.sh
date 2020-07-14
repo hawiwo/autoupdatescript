@@ -1,4 +1,5 @@
 #!/bin/bash
+# nuvo5006dE
 
 SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "${SCRIPT}")
