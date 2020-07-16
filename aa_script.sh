@@ -13,16 +13,16 @@ self_update() {
 
     if [[ -n $(git diff --name-only origin/${BRANCH} | grep ${SCRIPTNAME}) ]] 
     then
-        echo "Found a new version of me, updating myself.."
+        echo "Found a new version of me, updating myself."
         git pull --force
         git checkout ${BRANCH}
         git pull --force
-        echo "Running the new version.."
+        echo "Running the new version."
         exec "./${SCRIPTNAME}" "$@"
         # Now exit this old instance
         exit 1
     else
-        echo "Already the latest version.."
+        echo "Already the latest version."
     fi
 }
 
