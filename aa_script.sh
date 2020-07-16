@@ -4,7 +4,7 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "${SCRIPT}")
 SCRIPTNAME=$(basename "$0")
 ARGS="$@"
-BRANCH="master"
+BRANCH="master" #!!!
 
 self_update() {
     cd ${SCRIPTPATH}
