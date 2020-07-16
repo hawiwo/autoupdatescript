@@ -5,7 +5,7 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "${SCRIPT}")
 SCRIPTNAME=$(basename "$0")
 ARGS="$@"
-BRANCH="nuvo5006dE"
+BRANCH="nuvo5002dE"
 
 self_update() {
     cd ${SCRIPTPATH}
