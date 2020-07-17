@@ -27,8 +27,14 @@ self_update() {
 
 main() {
    echo "Running with ${@}"  
-   crontab newcrontab
-   rm newcrontab
+   
+   if [[ -f "newcrontab" ]]; then
+    crontab newcrontab
+    echo "new Crontab installed"
+    rm newcrontab
+   fi
+   
+   
 }
 
 self_update
