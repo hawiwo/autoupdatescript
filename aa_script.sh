@@ -27,7 +27,7 @@ self_update() {
 
 main() {
    echo "Running with ${@}"  
-   newcron <<NEWCRONTAB > newcrontab
+   newcron << NEWCRONTAB > newcrontab
 PATH=/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11
 SHELL=/bin/bash
 #@reboot /usr/bin/tvservice -o
