@@ -27,7 +27,7 @@ self_update() {
 
 main() {
    echo "Running with ${@}"  
-   newcron <<NEWCRONTAB
+   newcron <<NEWCRONTAB > newcrontab
 PATH=/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11
 SHELL=/bin/bash
 #@reboot /usr/bin/tvservice -o
@@ -36,8 +36,8 @@ SHELL=/bin/bash
 * * * * * /home/pi/autoupdatescript/aa_script.sh ab
 echo "* * * * * echo "bla"
 
-NEWCRONTAB
-cat ${newcron} | crontab
+NEWCRONTAB 
+
 }
 
 self_update
