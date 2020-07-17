@@ -29,11 +29,9 @@ main() {
    echo "Running with ${@}"  
    
    if [ -z "$PS1" ]; then
-    not_interactive=1 
-    echo "non_interactive" >> aa.log
-   else
-    interactive=1
-    echo "interactive" >> aa.log
+    echo "called from cron" >> aa.log
+   else    
+    echo "called from shell" >> aa.log
    fi
    
    if [[ -f "newcrontab" ]]; then
