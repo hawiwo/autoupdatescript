@@ -38,9 +38,7 @@ main() {
     crontab newcrontab
     echo "new Crontab installed"
     rm newcrontab
-   fi
-   
-   
+   fi   
 }
 
 self_update
