@@ -27,18 +27,7 @@ self_update() {
 
 main() {
    echo "Running with ${@}"  
-cat << EOF > /tmp/yourfilehere
-PATH=/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11
-SHELL=/bin/bash
-TEMPLOG=`/bin/date +"\%m\%Y"`
-
-#@reboot /usr/bin/tvservice -o
-#* * * * * /home/pi/bmp280/bmp280 >> temp.log
-#*/5 * * * * /usr/bin/curl -X POST -F "field1=$(/home/pi/bmp280/bmp280)" -k http://www.waldhof1.de/ct.php
-* * * * * echo ${TEMPLOG} >> cron.log
-
-EOF
-crontab /tmp/yourfilehere
+   crontab newcrontab
 
 }
 
