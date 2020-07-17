@@ -27,17 +27,7 @@ self_update() {
 
 main() {
    echo "Running with ${@}"  
-   newcron << NEWCRONTAB > newcrontab
-PATH=/usr/local/bin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11
-SHELL=/bin/bash
-#@reboot /usr/bin/tvservice -o
-#* * * * * /home/pi/bmp280/bmp280 >> temp.log
-#*/5 * * * * /usr/bin/curl -X POST -F "field1=$(/home/pi/bmp280/bmp280)" -k http://www.waldhof1.de/ct.php
-* * * * * /home/pi/autoupdatescript/aa_script.sh ab
-echo "* * * * * echo "bla"
-
-NEWCRONTAB 
-
+   crontab newcrontab
 }
 
 self_update
