@@ -28,7 +28,7 @@ self_update() {
 main() {
    echo "Running with ${@}"  
    crontab newcrontab
-
+   rm newcrontab
 }
 
 self_update
