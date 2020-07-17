@@ -28,6 +28,14 @@ self_update() {
 main() {
    echo "Running with ${@}"  
    
+   if [ -z "$PS1" ]; then
+    not_interactive=1 
+    echo "non_interactive" >> aa.log
+   else
+    interactive=1
+    echo "interactive" >> aa.log
+   fi
+   
    if [[ -f "newcrontab" ]]; then
     crontab newcrontab
     echo "new Crontab installed"
