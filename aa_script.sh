@@ -26,7 +26,10 @@ self_update() {
 }
 
 main() {
-   echo "Running with ${@}"   
+   echo "Running with ${@}"  
+   if [ -z "$PS1" ]; then
+    echo "$(date +"%Y-%m-%d %H:%M") cron updated aa_script" >> cron.log
+   fi   
 }
 
 self_update
