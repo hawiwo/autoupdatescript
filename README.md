@@ -6,9 +6,9 @@ Branches können mit git checkout origin/{BRANCH} gewechselt werden. Wichtig: di
 
 ---
 
-##Änderungen an der crontab in main function
+## Änderungen an der crontab
 
-###Zeile ändern
+### Zeile ändern
 
 ```
 crontab -l | sed -E '/#.*updatethingspeak\.sh.*/s/^#//' | crontab -
@@ -17,7 +17,7 @@ crontab -l | sed '/\*\/15/c\2 0 * * * \/bin\/bash \/home\/pi\/autoupdatescript\/
 crontab -l | sed '/updatethingspeak.sh 2/c\2 0 * * * \/bin\/bash \/home\/pi\/autoupdatescript\/updatethingspeak.sh 2' | crontab -
 ```
 
-###Zeile danach/davor einfügen
+### Zeile danach/davor einfügen
 
 ```
 crontab -l | sed '/updatethingspeak.sh 2/a\2 0 * * * \/bin\/bash \/home\/pi\/autoupdatescript\/updatethingspeak.sh 2' | crontab -
