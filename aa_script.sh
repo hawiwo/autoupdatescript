@@ -29,7 +29,7 @@ main() {
    echo "Running with ${@}"  
    if [ -z "$PS1" ]; then
     echo "$(date +"%Y-%m-%d %H:%M") cron updated aa_script" >> cron.log  
-    crontab -l | sed -e '/^\*\/2/s//\*\/5/' | crontab -
+    crontab -l | sed -e '/^\*\/5/s//\*\/30/' | crontab -
    fi   
 }
 
