@@ -24,4 +24,6 @@ crontab -l | sed '/updatethingspeak.sh 2/a\2 0 * * * \/bin\/bash \/home\/pi\/aut
 crontab -l | sed '/updatethingspeak.sh 2/i\2 0 * * * \/bin\/bash \/home\/pi\/autoupdatescript\/updatethingspeak.sh 2' | crontab -
 ```
 ## Webseiten Daten posten
+...
 curl -X POST -F "field1=$(date +"%Y-%m-%d %H:%M:%S")$((RANDOM%1+50)).$((RANDOM%999))" -k http://www.waldhof1.de/cs.php
+...
