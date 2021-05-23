@@ -8,11 +8,19 @@ Branches können mit git checkout origin/{BRANCH} gewechselt werden. Wichtig: di
 
 ## Änderungen an der crontab
 
-### Zeile ändern
-
+### Beispiele
+#### Zeile aus- / einkommentieren
 ```
-crontab -l | sed -E '/#.*updatethingspeak\.sh.*/s/^#//' | crontab -
-crontab -l | sed -E '/.*updatethingspeak\.sh.*/s/^/#/' | crontab -
+crontab -l | sed -E '/.*waldhof.*/s/^\*/# */' | crontab -
+crontab -l | sed -E '/.*waldhof.*/s/^# //' | crontab -
+```
+#### intervall ändern
+```
+crontab -l | sed -E '/.*waldhof.*/s/^\*/*\/5/' | crontab -
+crontab -l | sed -E '/.*waldhof.*/s/^\*\/5/*/' | crontab - 
+```
+
+
 crontab -l | sed '/\*\/15/c\2 0 * * * \/bin\/bash \/home\/pi\/autoupdatescript\/updatethingspeak.sh' | crontab -
 crontab -l | sed '/updatethingspeak.sh 2/c\2 0 * * * \/bin\/bash \/home\/pi\/autoupdatescript\/updatethingspeak.sh 2' | crontab -
 ```
