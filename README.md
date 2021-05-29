@@ -18,9 +18,13 @@ crontab -l | sed -E '/.*waldhof.*/s/^# //' | crontab -
 ```
 crontab -l | sed -E '/.*waldhof.*/s/^\*/*\/5/' | crontab -
 crontab -l | sed -E '/.*waldhof.*/s/^\*\/5/*/' | crontab - 
+
+
+crontab -l | sed -E '/.*echo.*/s/^[\*\/0-9]*/*\/5/' | crontab -
+crontab -l | sed -E '/.*echo.*/s/^[\*\/0-9]*/*/' | crontab -
 ```
 
-
+```
 crontab -l | sed '/\*\/15/c\2 0 * * * \/bin\/bash \/home\/pi\/autoupdatescript\/updatethingspeak.sh' | crontab -
 crontab -l | sed '/updatethingspeak.sh 2/c\2 0 * * * \/bin\/bash \/home\/pi\/autoupdatescript\/updatethingspeak.sh 2' | crontab -
 ```
